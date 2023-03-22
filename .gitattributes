@@ -1,0 +1,9 @@
+# See https://help.github.com/articles/dealing-with-line-endings/
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+
+# These files are text and should be normalized (Convert crlf => lf)
+*.md text
+*.yaml text
+*.yml text
+Dockerfile text
