@@ -17,7 +17,7 @@ REMOTE_PORT | Port on remote host to forward traffic to | yes (80)
 LOCAL_PORT | Port where container listens. Must be **non-privileged** (i.e. >1024) | yes (8080)
 
 ```bash
-docker run -e REMOTE_HOST=<remote_host> -e REMOTE_PORT=<remote_port> -e LOCAL_PORT=<local_port> -p <exposed_local_port>:<local_port> schueco/port-forward
+docker run -e REMOTE_HOST=<remote_host> -e REMOTE_PORT=<remote_port> -e LOCAL_PORT=<local_port> -p <exposed_local_port>:<local_port> ghcr.io/schueco/port-forward
 ```
 
 ## Examples
@@ -25,5 +25,5 @@ docker run -e REMOTE_HOST=<remote_host> -e REMOTE_PORT=<remote_port> -e LOCAL_PO
 The following command will forward all traffic from the remote port `80` on the remote host `www.example.com` to port `8080` on `localhost`:
 
 ```bash
-docker run -e REMOTE_HOST=www.example.com -e REMOTE_PORT=80 -e LOCAL_PORT=8080 -p 8080:8080 schueco/port-forward
+docker run -e REMOTE_HOST=www.example.com -e REMOTE_PORT=80 -e LOCAL_PORT=8080 -p 8080:8080 ghcr.io/schueco/port-forward
 ```
