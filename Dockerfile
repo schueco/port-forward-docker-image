@@ -1,9 +1,5 @@
 FROM alpine:3.17.2
 
-# LABEL org.opencontainers.image.source="https://github.com/schueco/port-forward-docker-image"
-# LABEL org.opencontainers.image.description="This image uses `socat` to forward network traffic."
-# LABEL org.opencontainers.image.licenses="MIT"
-
 RUN apk add --update --no-cache socat \
 	&& rm -rf /var/cache/apk/
 
