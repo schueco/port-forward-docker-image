@@ -24,7 +24,13 @@ jobs:
           node-version: "lts/*"
       - name: Install dependencies
         run: npm ci
+      - name: "🪙 Generate a token"
+        id: generate-token
+        uses: tibdex/github-app-token@v2
+        with:
+          app_id: ${{ secrets.SEMANTIC_RELEASE_APP_ID }}
+          private_key: ${{ secrets.SEMANTIC_RELEASE_KEY_PEM }}
       - name: Release
         env:
-          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GH_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
         run: npx semantic-release
